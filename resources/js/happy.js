@@ -1,21 +1,6 @@
 
 
 $(document).ready(function(){
-
-	//fix navbar when scroll down reaches height of jumbotron image
-
-	var nav = $("#container");
-
-	nav.on("scroll", function(e) {
-		e.preventDefault();	   
-		document.alert('test'); 
-	  	if (this.scrollTop > 193) {
-	    	nav.addClass("fixed");
-	  	} else {
-	    	nav.removeClass("fixed");
-	  	}
-	  
-	});
 	
 	//blink trending headline element for added cheesy effect
 	setInterval(function(){
