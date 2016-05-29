@@ -41,12 +41,15 @@
 		      </ul>
 		    </div>
 		</nav>
-		<div class="row">
-			<div class="training col-sm-12">
-				<h1></h1>
-				<a href="#" target="_blank"><img class="img-responsive center-block nightmare-image" src="../resources/images/main/doobs_horror_main.jpg" alt="Nightmare on Doobie Street"></a>
-				<div class="training-text center-block">
-					
+		<div class="wrapper">
+		<!-- <img class="nightmare-background" src="../resources/images/background/horror.jpg" class="img-responsive" alt="Responsive image"> -->
+			<div class="row">
+				<div class="training col-sm-12">
+					<h1></h1>
+					<a href="#" target="_blank"><img class="img-responsive center-block nightmare-image" src="../resources/images/main/doobs_horror_main.jpg" alt="Nightmare on Doobie Street"></a>
+					<div class="training-text center-block">
+						
+					</div>
 				</div>
 			</div>
 		</div>
@@ -54,20 +57,10 @@
 	<footer>
     	<div class="container">
     		<div class="text-group text-center">
-				<ul class="social-icons">
-					<li>
-						<a href="index.html"><img class="" src="resources/images/icons/Facebook.png"></a>
-					</li>
-					<li>
-						<a href="index.html"><img class="" src="resources/images/icons/Instagram.png"></a>
-					</li>
-					<li>
-						<a href="index.html"><img class="" src="resources/images/icons/Twitter.png"></a>
-					</li>
-					<li>
-						<a href="index.html"><img class="" src="resources/images/icons/Pinterest.png"></a>
-					</li>
-				</ul>
+				<span class="">
+					<audio src="../resources/music/horror.mp3" controls autoplay loop>
+					</audio>
+				</span>	
 				<p class=""></p>
 			</div>
 			<div class="">
@@ -75,5 +68,22 @@
 			</div>
 		</div>
     </footer>
+    <script type="text/javascript">
+    	$(function() {
+    		setTimeout(function(){
+    			$(".nightmare-image").effect("pulsate", { times:6 }, 800);
+	    		flashDoobie;
+	    	}, 5000);
+    	});
+
+    	function flashDoobie(){
+			$(".nightmare-image").delay(1500).effect("pulsate", { times:15 }, 400);
+			$(".nightmare-image").delay(2600).effect("pulsate", { times:11 }, 400);
+			$(".nightmare-image").delay(400).effect("pulsate", { times:6 }, 400);
+			$(".nightmare-image").delay(1750).effect("pulsate", { times:9 }, 400);
+			$(".nightmare-image").delay(2200).effect("pulsate", { times:22 }, 400);
+			$(".nightmare-image").delay(600).effect("pulsate", { times:3 }, 400);
+	    };
+    </script>
 </body>
 </html>
