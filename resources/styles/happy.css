@@ -364,32 +364,14 @@ video.video{
 	width:40%;
 }
 
-.zodic-text p{
-	font-family: "Chunkfive", Arial,Verdana,Helvetica,sans-serif;
-	color: black;
-}
-
 .zodiac > p{
 	font-size: 20px;
 	width: 50%;
 	margin: 0 auto;
 	text-align: center;
 	padding: 50px 0 50px;
-	font-family: "Chunkfive", Arial,Verdana,Helvetica,sans-serif;
-}
-
-.zodiac > h1{
-	text-align: center;
-	padding: 0 0 15px 0; 
-	font-family: "Chunkfive";
-	font-size: 3em;
-}
-
-.zodiac-text h1{
-	text-align: center;
-	padding: 0 0 15px 0; 
-	font-family: "Hallo";
-    font-weight: bold;
+	font-family: "Dosis", Arial,Verdana,Helvetica,sans-serif;
+	font-weight: 600;
 }
 
 /*babybump.html*/
@@ -399,28 +381,39 @@ video.video{
 }
 
 
-#babybump h1 {
+.zodiac > h1, .zodiac-text h1, #babybump h1, .training h1{
    	font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 46px;
-    font-size: 28px;
+    font-size: 40px;
     margin: 0 0 23px 0;
     text-transform: uppercase;
-    }
-#babybusmp p {
-    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+#babybump h2, .training h3{
+   	font-family: 'Dosis', sans-serif;
     font-weight: 600;
-    font-size: 15px;
-    line-height: 23px;
-    margin: 0 0 23px 0
-    }
-#babybump p {
+    line-height: 46px;
+    font-size: 35px;
+    margin: 0 0 23px 0;
+    text-transform: uppercase;
+}
+
+.training h4{
+   	font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    line-height: 46px;
+    font-size: 21px;
+    margin: 0 0 23px 0;
+}
+
+.zodiac-text p, #babybump p, .training-text p {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 15px;
     line-height: 23px;
     margin: 0 0 23px 0;
-
 }
 
 .pregs-block{
@@ -486,4 +479,18 @@ dd#proposalEX img{
 }
 #preggo{
 	text-align: center;
+}
+
+.doobie{
+	width:50%;
+    height: auto;
+}
+
+.training img{
+	padding-bottom: 20px;
+}
+
+.training h1{
+	text-align: center;
+	padding: 20px 20px;
 }
