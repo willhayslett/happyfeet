@@ -38,7 +38,7 @@ html {
 }
 
 body{
-	background-color: #fff; /*d5d6d2*/
+	background-color: #f4eade; /*d5d6d2*/
 	margin-bottom: 185px;
 }
 
@@ -81,6 +81,12 @@ body#nightmare{
 	background-image: none;
     background-color: red;
     font-weight: 700;
+}
+
+#myNavbar {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
 }
 
 .navbar-nav li a {
@@ -388,6 +394,16 @@ video.video{
     font-size: 40px;
     margin: 0 0 23px 0;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.zodiac-text h1{
+   	font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    line-height: 46px;
+    font-size: 35px;
+    margin: 0 0 23px 0;
+    text-align: left;
     text-align: center;
 }
 
