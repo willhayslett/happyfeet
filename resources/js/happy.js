@@ -65,22 +65,53 @@ $(document).ready(function(){
 
 	//getting video element using jQuery
     var vid = $(".video");
-
+    var playing = false;
     //check if video is ready to play
   	vid.on('canplay', function(){
-        vid.mouseenter(function(){
-         	$(this).get(0).play(function(){vid.attr('controls');});
-         	$(this).attr(controls);
-        }).mouseleave(function(){
-            $(this).get(0).pause(function(){vid.removeAttr('controls');});
+        vid.click(function(){
+        	/*this.paused ? this.play() : this.pause();*/
+        	if(playing == false){
+        		$(this).get(0).setAttribute("controls","controls")
+        		$(this).get(0).play();
+         		playing = true;
+        	} else {
+        		$(this).get(0).removeAttribute("controls") 
+        		$(this).get(0).pause();
+        		playing = false;
+        	}
         })
     });
 
+    /*
+		Vertically center Bootstrap 3 modals so they aren't always stuck at the top
+	*/
+/*	$(function() {
+	    function reposition() {
+	        var modal = $(this),
+	            dialog = modal.find('.modal-dialog');
+	        modal.css('display', 'block');
+	        
+	        // Dividing by two centers the modal exactly, but dividing by three 
+	        // or four works better for larger screens.
+	        dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+	    }
+	    // Reposition when a modal is shown
+	    $('.modal').on('show.bs.modal', reposition);
+	    // Reposition when the window is resized
+	    $(window).on('resize', function() {
+	        $('.modal:visible').each(reposition);
+	    });
+	});
+*/
+    //Cookie handlers for subscribe popup:
+    /*Cookies.set('subscribe', 'yes');
+    Cookies.set('subscribe', 'no');*/
+    
+
+	//get year for copyright in footer
 	function getFooterDate(){
 		var footer = $('#footer-date');
-		console.log(footer);
 		var date = new Date();
-		console.log(date.getFullYear());
 		footer.html(date.getFullYear());
 	}
 
