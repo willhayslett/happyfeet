@@ -11,17 +11,44 @@
 	<!-- Latest compiled and minified JS -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC:700|Roboto:400,500,700,900|Roboto+Condensed|Alegreya:700|Dosis:400,600,700,800" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="resources/js/marquee.min.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.waypoints.min.js"></script>
 	<script type="text/javascript" src="resources/js/js.cookie.js"></script>
 	<script type="text/javascript" src="resources/js/happy.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC:700|Roboto:400,500,700,900|Roboto+Condensed|Alegreya:700|Dosis:400,600,700,800" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <title>
 </title>
 <body>
 	<div id="bootstrapCssTest" class="hidden"></div>
+	<div role="dialog" tabindex="-1" id="subscribePop" class="center-block modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+    				<button type="button-lg" class="close" data-dismiss="modal">
+    					<span class="glyphicon glyphicon-remove"></span>
+    				</button> 
+					<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
+				</div>
+				<div class="modal-body">
+					<p>Like what you're reading? Can't get enough of Hayslett Weekly and want to know more about our family? Sign up below for updates and exclusive access to special content. You know you want to.  
+					</p>
+			      	<form id="subscribePopForm" action="getEmailAddy.php" method="post" class="form" role="form">
+						<div class="form-group-lg">
+							<label class="sr-only" for="email">Email Address</label>
+						    <input placeholder="Email Address" type="email" name="emailaddy" class="form-control" id="email">
+						</div>
+						<button type="submit" class="btn btn-primary btn-lg">Subscribe to Email Updates</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+			    	<button style="float:right;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    	</div>
+		    	<div id="formResponse"></div>
+		    </div>
+	    </div>
+    </div>
 	<div class="jumbotron">
 		<a href="index.html">
 			<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
@@ -80,32 +107,6 @@
 						<a href="articles/nightmare"><img class="main-image img-responsive" src="resources/images/main/doobs_horror.jpg" alt="Doobie with red eyes"></a>
 					</div>
 				</div>
-				<div role="dialog" tabindex="-1" id="subscribePop" class="center-block modal fade">
-					<div class="modal-dialog">
-   						<div class="modal-content">
-   							<div class="modal-header">
-			    				<button type="button-lg" class="close" data-dismiss="modal">
-			    					<span class="glyphicon glyphicon-remove"></span>
-			    				</button> 
-								<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
-							</div>
-							<div class="modal-body">
-								<p>Like what you're reading? Can't get enough of Hayslett Weekly and want to know more about our family? Sign up below for updates and exclusive access to special content. You know you want to.  
-								</p>
-						      	<form class="form" role="form">
-									<div class="form-group-lg">
-										<label class="sr-only" for="email">Email Address</label>
-									    <input placeholder="Email Address" type="email" class="form-control" id="email">
-									</div>
-									<button type="submit" class="btn btn-primary btn-lg">Subscribe to Email Updates</button>
-								</form>
-							</div>
-							<div class="modal-footer">
-						    	<button style="float:right;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					    	</div>
-				    	</div>
-				    </div>
-			    </div>
 				<div id="gorillazen" class="text-block">
 					<h2 class="enquire">BREAKING NEWS!</h2>
 					<a href=""><strong class="attention-text">GorillaZen Brewing<sup>&reg;</sup> bottles their first wine. Could it be a 21st birthday gift?</strong></a>
@@ -180,16 +181,5 @@
 	    }
 	</script>
 
-	<script type="text/javascript">
-		var subscribe = $('#subscribePop');
-		var waypoint = new Waypoint({
-			element: $('#doobie'),
-			handler: function() {
-			    $('#subscribePop').modal({
-			    	'show':true,
-			    });
-			}
-		});
-	</script>
 </body>
 </html>

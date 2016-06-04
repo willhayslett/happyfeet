@@ -81,32 +81,72 @@ $(document).ready(function(){
         	}
         })
     });
+    //Logic for subscriber popup:
+    var subscribe = $('#subscribePop');
+	var waypoint = new Waypoint({
+		element: $('#doobie'),
+		handler: function() {
+			if (Cookies.get('subscribe') === undefined){
+				
+				// set the expiring cookie - whether they subscribe or not
+				Cookies.set('subscribe', 'no', { expires: 7} ); //expires after 7 days
+				
+				$('#subscribePop').modal({
+		    		'show':true
+		    	});
+			}
+		}
+	});
+    
+    //handle form data:
 
-    /*
-		Vertically center Bootstrap 3 modals so they aren't always stuck at the top
-	*/
-/*	$(function() {
-	    function reposition() {
-	        var modal = $(this),
-	            dialog = modal.find('.modal-dialog');
-	        modal.css('display', 'block');
-	        
-	        // Dividing by two centers the modal exactly, but dividing by three 
-	        // or four works better for larger screens.
-	        dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
-	    }
-	    // Reposition when a modal is shown
-	    $('.modal').on('show.bs.modal', reposition);
-	    // Reposition when the window is resized
-	    $(window).on('resize', function() {
-	        $('.modal:visible').each(reposition);
+    $(function() {
+	    // Get the form.
+	    var form = $('#subscribePopForm');
+
+	    // Get the messages div.
+	    var formResponse = $('#formResponse');
+
+	    $('form').submit(function(event){
+	    	event.preventDefault();
+
+	    	var formData = $(form).serialize();
+
+	    	$.ajax({
+			    type: 'POST',
+			    url: $(form).attr('action'),
+			    data: formData
+
+			}).done(function(response) {
+				// Set the "yes" cookie, which should never expire
+				Cookies.set('subscribe', 'yes', { expires: 77777777777777});
+
+			    // Make sure that the formResponse div has the 'success' class.
+			    $(formResponse).removeClass('error');
+			    $(formResponse).addClass('success');
+
+			    // Set the message text.
+			    $(formResponse).text(response);
+
+			    // Clear the form.
+			    $('#name').val('');
+			    $('#email').val('');
+
+			}).fail(function(data) {
+			    // Make sure that the formResponse div has the 'error' class.
+			    $(formResponse).removeClass('success');
+			    $(formResponse).addClass('error');
+
+			    // Set the message text.
+			    if (data.responseText !== '') {
+			        $(formResponse).text(data.responseText);
+			    } else {
+			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
+			    }
+			});
 	    });
 	});
-*/
-    //Cookie handlers for subscribe popup:
-    /*Cookies.set('subscribe', 'yes');
-    Cookies.set('subscribe', 'no');*/
-    
+
 
 	//get year for copyright in footer
 	function getFooterDate(){
