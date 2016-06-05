@@ -266,23 +266,13 @@ footer {
   background-color: #d5d6d2;
 }
 
-
-.modal {
-}
-
-
 #subscribePop .form-group-lg{
-	padding: 5px 0px 30px 0px;
-}
-
-#subscribePop .form-group-lg{
-	padding-bottom: 15px;
+	padding-bottom: 25px;
 }
 
 #nightmare footer{
 	background-color: black;
 }
-
 
 .nightmare-image{
 	position: relative;
@@ -306,12 +296,6 @@ footer {
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
