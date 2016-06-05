@@ -81,24 +81,7 @@ $(document).ready(function(){
         	}
         })
     });
-    //Logic for subscriber popup:
-    var subscribe = $('#subscribePop');
-	var waypoint = new Waypoint({
-		element: $('#doobie'),
-		handler: function() {
-			if (Cookies.get('subscribe') === undefined){
-				
-				// set the expiring cookie - whether they subscribe or not
-				Cookies.set('subscribe', 'no', { expires: 7} ); //expires after 7 days
-				
-				$('#subscribePop').removeClass('hide');
-				$('#subscribePop').modal({
-		    		'show':true
-		    	});
-			}
-		}
-	});
-    
+
     //handle the subscribe form:
 
     $(function() {
