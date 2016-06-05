@@ -98,14 +98,14 @@ $(document).ready(function(){
 		}
 	});
     
-    //handle form data:
+    //handle subscribe form data:
 
     $(function() {
 	    // Get the form.
 	    var form = $('#subscribePopForm');
 
 	    // Get the messages div.
-	    var formResponse = $('#formResponse');
+	    var formResponse = $('#modalText');
 
 	    $('form').submit(function(event){
 	    	event.preventDefault();
@@ -121,10 +121,6 @@ $(document).ready(function(){
 				// Set the "yes" cookie, which should never expire
 				Cookies.set('subscribe', 'yes', { expires: 77777777777777});
 
-			    // Make sure that the formResponse div has the 'success' class.
-			    $(formResponse).removeClass('error');
-			    $(formResponse).addClass('success');
-
 			    // Set the message text.
 			    $(formResponse).text(response);
 
@@ -133,10 +129,6 @@ $(document).ready(function(){
 			    $('#email').val('');
 
 			}).fail(function(data) {
-			    // Make sure that the formResponse div has the 'error' class.
-			    $(formResponse).removeClass('success');
-			    $(formResponse).addClass('error');
-
 			    // Set the message text.
 			    if (data.responseText !== '') {
 			        $(formResponse).text(data.responseText);
