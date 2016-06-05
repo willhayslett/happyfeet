@@ -11,7 +11,7 @@
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$name = cleanInput($_POST["name"]);
-	  	$email = filter_var(cleanInput($_POST["email"]), FILTER_SANITIZE_EMAIL);
+	  	$email = filter_var(cleanInput($_POST["emailaddy"]), FILTER_SANITIZE_EMAIL);
 
 	  	if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 	  		// Set a 400 (bad request) response code and exit.
