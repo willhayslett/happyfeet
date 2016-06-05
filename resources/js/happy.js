@@ -105,6 +105,10 @@ $(document).ready(function(){
 				// Set the "yes" cookie, which should never expire
 				Cookies.set('subscribe', 'yes', { expires: 77777777777777});
 
+				// Remove danger class and add the success classes:
+				$(formResponse).removeClass('alert alert-danger');
+				$(formResponse).addClass('alert alert-success');
+
 			    // Set the message text.
 			    $(formResponse).text(response);
 
@@ -114,8 +118,12 @@ $(document).ready(function(){
 			}).fail(function(data) {
 			    // Set the message text.
 			    if (data.responseText !== '') {
+			    	$(formResponse).removeClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-success');
 			        $(formResponse).text(data.responseText);
 			    } else {
+			    	$(formResponse).removeClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-success');
 			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
 			    }
 			});
@@ -141,6 +149,10 @@ $(document).ready(function(){
 			    data: formData
 
 			}).done(function(response) {
+				// Remove danger class and add the success classes:
+				$(formResponse).removeClass('alert alert-danger');
+				$(formResponse).addClass('alert alert-success');
+
 			    // Set the message text.
 			    $(formResponse).text(response);
 
@@ -151,8 +163,12 @@ $(document).ready(function(){
 			}).fail(function(data) {
 			    // Set the message text.
 			    if (data.responseText !== '') {
+			    	$(formResponse).removeClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-success');
 			        $(formResponse).text(data.responseText);
 			    } else {
+			    	$(formResponse).removeClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-success');
 			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
 			    }
 			});
