@@ -23,39 +23,11 @@
 </title>
 <body>
 	<div id="bootstrapCssTest" class="hidden"></div>
-	<div role="dialog" tabindex="-1" id="subscribePop" class="center-block modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-    				<button type="button-lg" class="close" data-dismiss="modal">
-    					<span class="glyphicon glyphicon-remove"></span>
-    				</button> 
-					<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
-				</div>
-				<div id="modalText" class="modal-body">
-					<p>Like what you're reading? Can't get enough of the Hayslett Weekly and want to know more about our family? Sign up below for updates and exclusive access to special content. You know you want to.  
-					</p>
-			      	<form id="subscribePopForm" action="getEmailAddy.php" method="post" class="form" role="form">
-						<div class="form-group-lg">
-							<label class="sr-only" for="email">Email Address</label>
-						    <input placeholder="Email Address" type="email" name="emailaddy" class="form-control" id="email">
-						</div>
-						<button type="submit" class="center-block btn btn-primary btn-lg">Subscribe to Email Updates</button>
-					</form>
-				</div>
-				<div class="modal-footer">
-			    	<button style="float:right;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		    	</div>
-		    	<div id="formResponse"></div>
-		    </div>
-	    </div>
-    </div>
 	<div class="jumbotron">
 		<a href="index.html">
 			<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
 		</a>
 	</div>
-
 	<div class="container">
 		<nav class="navbar navbar-default navbar-custom">
 		    <div class="navbar-header">
@@ -176,6 +148,32 @@
 			</div>
 		</div>
     </footer>
+    <div role="dialog" tabindex="-1" id="subscribePop" class="modal fade hide center-block">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+    				<button type="button-lg" class="close" data-dismiss="modal">
+    					<span class="glyphicon glyphicon-remove"></span>
+    				</button> 
+					<img class="img-responsive center-block" src="resources/images/main/logo6_style.png">
+				</div>
+				<div id="modalText" class="modal-body">
+					<p>Like what you're reading? Can't get enough of the Hayslett Weekly and want to know more about our family? Sign up below for updates and exclusive access to special content. You know you want to.  
+					</p>
+			      	<form id="subscribePopForm" action="getEmailAddy.php" method="post" class="form" role="form">
+						<div class="form-group-lg">
+							<label class="sr-only" for="email">Email Address</label>
+						    <input placeholder="Email Address" type="email" name="emailaddy" class="form-control" id="email">
+						</div>
+						<button type="submit" class="center-block btn btn-primary btn-lg">Subscribe to Email Updates</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+			    	<button style="float:right;" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    	</div>
+		    </div>
+	    </div>
+    </div>
 	<script type="text/javascript">
 	    if ($('#bootstrapCssTest').is(':visible') === true) {
 	        $('<link href="resources/styles/bootstrap.css" rel="stylesheet" type="text/css" />').appendTo('head');

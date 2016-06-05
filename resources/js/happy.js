@@ -91,6 +91,7 @@ $(document).ready(function(){
 				// set the expiring cookie - whether they subscribe or not
 				Cookies.set('subscribe', 'no', { expires: 7} ); //expires after 7 days
 				
+				$('#subscribePop').removeClass('hide');
 				$('#subscribePop').modal({
 		    		'show':true
 		    	});
@@ -98,7 +99,7 @@ $(document).ready(function(){
 		}
 	});
     
-    //handle subscribe form data:
+    //handle the subscribe form:
 
     $(function() {
 	    // Get the form.
@@ -125,7 +126,6 @@ $(document).ready(function(){
 			    $(formResponse).text(response);
 
 			    // Clear the form.
-			    $('#name').val('');
 			    $('#email').val('');
 
 			}).fail(function(data) {
@@ -139,6 +139,42 @@ $(document).ready(function(){
 	    });
 	});
 
+    //Handle the comment form
+    $(function() {
+	    // Get the form.
+	    var form = $('#commentForm');
+
+	    // Get the messages div.
+	    var formResponse = $('#commentText');
+
+	    $('form').submit(function(event){
+	    	event.preventDefault();
+
+	    	var formData = $(form).serialize();
+
+	    	$.ajax({
+			    type: 'POST',
+			    url: $(form).attr('action'),
+			    data: formData
+
+			}).done(function(response) {
+			    // Set the message text.
+			    $(formResponse).text(response);
+
+			    // Clear the form.
+			    $('#name').val('');
+			    $('#email').val('');
+
+			}).fail(function(data) {
+			    // Set the message text.
+			    if (data.responseText !== '') {
+			        $(formResponse).text(data.responseText);
+			    } else {
+			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
+			    }
+			});
+	    });
+	});
 
 	//get year for copyright in footer
 	function getFooterDate(){

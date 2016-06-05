@@ -1,6 +1,6 @@
 <?php
 	// define variables and set to empty values
-	$email = "";
+	$name = $email = $comment = "";
 
 	function cleanInput($data) {
 	  	$data = trim($data);
@@ -10,6 +10,7 @@
 	}
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$name = cleanInput($_POST["name"]);
 	  	$email = filter_var(cleanInput($_POST["emailaddy"]), FILTER_SANITIZE_EMAIL);
 
 	  	if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
@@ -19,8 +20,6 @@
             exit;
 		} 
 
-		// Set the from email address.
-		$from = "noreply@hayslettweekly.com";
 		// Set the recipient email address.
         $recipient = "willsenge@gmail.com";
 
@@ -28,11 +27,12 @@
         $subject = "$email Subscribed!";
 
         // Build the email content.
-        $email_content = "Hi WillSenge! You've received a new subscription. Here's the email address below:\n\n";
+        $email_content = "Hi WillSenge! You've received a new subscription. Details below:\n\n";
+        $email_content .= "Name: $name\n";
         $email_content .= "Email: $email\n\n";
 
         // Build the email headers.
-        $email_headers = "From: <$from>";
+        $email_headers = "From: $name <$email>";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
