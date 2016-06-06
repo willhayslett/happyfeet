@@ -107,12 +107,12 @@ $(document).ready(function(){
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text(data.responseText);
-			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
+			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-primary btn-lg" onclick="$(\'#commentForm\').load(location.href + " #commentForm")">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
-			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
+			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-primary btn-lg" onclick="$(\'#commentForm\').load(location.href + " #commentForm")">Try Again</button>');
 			    }
 			});
 	    });
@@ -154,20 +154,16 @@ $(document).ready(function(){
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text(data.responseText);
-			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
+			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-primary btn-lg" onclick="$(\'#commentForm\').load(location.href + " #commentForm")">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
-			        $(formResponse).text('Whoops! That didn\'t work as expected. Please try again.');
-			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
+			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-primary btn-lg" onclick="$(\'#commentForm\').load(location.href + " #commentForm")">Try Again</button>');
+			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-primary btn-lg" onclick="$(\'#commentForm\').load(location.href + " #commentForm")">Try Again</button>');
 			    }
 			});
 	    });
 	});
-
-   	$("#reload").click(function(){
-      	$('#commentForm').load(location.href + " #commentForm")
-   	});
 
 	//get year for copyright in footer
 	function getFooterDate(){
