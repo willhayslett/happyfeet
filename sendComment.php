@@ -30,7 +30,7 @@
         // Build the email content.
         $email_content = "Hi WillSenge! You just received a new message from $name. Check the details below:\n\n";
         $email_content .= "Name: $name\n";
-        $email_content .= "Email: $email\n\n";
+        $email_content .= "Email: $email\n";
         $email_content .= "Comment: $comment\n\n";
 
         // Build the email headers.

@@ -5,6 +5,9 @@
 	<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="resources/styles/lightgallery.css"></link>
+	<link rel="stylesheet" type="text/css" href="resources/styles/lg-transitions.css"></link>
+	<link rel="stylesheet" type="text/css" href="resources/styles/lg-fb-comment-box.css"></link>
 	<link rel="stylesheet" type="text/css" href="resources/styles/happy.css"></link>
 	<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 	<script type="text/javascript"> window.jQuery || document.write('<script src="resources/js/jquery-1.6.3.min.js"><\/script>')</script>
@@ -12,6 +15,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Amatic+SC:700|Roboto:400,500,700,900|Roboto+Condensed|Alegreya:700|Dosis:400,600,700,800" rel="stylesheet" type="text/css" />
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="resources/js/lightgallery.js"></script>
+	<script type="text/javascript" src="resources/js/lg-video.js"></script>
+	<script type="text/javascript" src="resources/js/lg-thumbnail.js"></script>
+	<!-- A jQuery plugin that adds cross-browser mouse wheel support. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 	<script type="text/javascript" src="resources/js/marquee.min.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.waypoints.min.js"></script>
 	<script type="text/javascript" src="resources/js/js.cookie.js"></script>
@@ -53,34 +61,63 @@
 			</div>
 		</div>
 		<div class="row">
-			<div style="text-align: center;" class="center-block text-block col-sm-12">
-				Click on a video to play!
+			<div id="videoClick" style="text-align: center;" class="center-block text-block col-sm-12">
+				<p>Click on a video to play!</p>
 			</div>
-			<div class="video-main center-block col-sm-6">
-				<video loop height="225px" class="center-block img img-responsive video">
-					<source src="resources/videos/happyfeet.mp4" type="video/mp4">
-				</video>
+			<!-- Hidden video div -->
+			<div style="display:none;" id="video1">
+			    <video class="video lg-video-object lg-html5" controls preload="none">
+			        <source src="resources/videos/happyfeet.mp4" type="video/mp4">
+			         Whoops! Your browser does not support HTML5 video.
+			    </video>
 			</div>
-			<div class="video center-block col-sm-6">
-				<video height="225px" class="img img-responsive video">
-					<source src="resources/videos/bulldog.mp4" type="video/mp4">
-				</video>
+			<div style="display:none;" id="video2">
+			    <video class="video lg-video-object lg-html5" controls preload="none">
+			        <source src="resources/videos/bulldog.mp4" type="video/mp4">
+			         Whoops! Your browser does not support HTML5 video.
+			    </video>
 			</div>
-			<div class="video center-block col-sm-6">
-				<video id="test" class="img img-responsive video">
-					<source src="resources/videos/corgi.mp4" type="video/mp4" currentTime="15">
-				</video>
+			<div style="display:none;" id="video3">
+			    <video class="video lg-video-object lg-html5" controls preload="none">
+			        <source src="resources/videos/corgi.mp4" type="video/mp4">
+			         Whoops! Your browser does not support HTML5 video.
+			    </video>
 			</div>
-			<div class="video center-block col-sm-6">
-				<video class="img img-responsive video">
-					<source src="resources/videos/pitbullswim.mp4" type="video/mp4">
-				</video>
+			<div style="display:none;" id="video4">
+			    <video class="video lg-video-object lg-html5" controls preload="none">
+			        <source src="resources/videos/pitbullswim.mp4" type="video/mp4">
+			         Whoops! Your browser does not support HTML5 video.
+			    </video>
 			</div>
-			<div class="video center-block col-sm-6">
-				<video class="img img-responsive video">
-					<source src="resources/videos/pugs.mp4" type="video/mp4">
-				</video>
+			<div style="display:none;" id="video5">
+			    <video class="video lg-video-object lg-html5" controls preload="none">
+			        <source src="resources/videos/pugs.mp4" type="video/mp4">
+			         Whoops! Your browser does not support HTML5 video.
+			    </video>
 			</div>
+			<div id="videoDiv">
+				<ul id="html5-videos">
+					<div class="left">
+						<li data-poster="resources/videos/happyfeet_cropped.jpg" data-sub-html="video caption1" data-html="#video1" >
+						    <img class="video-main center-block img img-responsive" src="resources/videos/happyfeet_cropped.jpg" />
+						</li>
+						<li data-poster="resources/videos/bull_thumbnail.png" data-sub-html="video caption2" data-html="#video2" >
+						    <img class="video-main center-block img-responsive" src="resources/videos/bull_thumbnail.png" />
+						</li>
+						<li data-poster="resources/videos/corg_thumbnail.png" data-sub-html="video caption1" data-html="#video3" >
+						    <img class="video-main center-block img-responsive" src="resources/videos/corg_thumbnail.png" />
+						</li>
+					</div>
+					<div class="center-block">
+						<li data-poster="resources/videos/herc_thumbnail.png" data-sub-html="video caption2" data-html="#video4" >
+						    <img class="video-main center-block img-responsive" src="resources/videos/herc_thumbnail.png" />
+						</li>
+						<li data-poster="resources/videos/pug_thumbnail.png" data-sub-html="video caption2" data-html="#video5" >
+						    <img class="video-main center-block img-responsive" src="resources/videos/pug_thumbnail.png" />
+						</li>
+					</div>
+				</ul>
+			</div> 
 		</div>
 	</div>
 	<footer>
@@ -107,5 +144,12 @@
 			</div>
 		</div>
     </footer>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		$('#html5-videos').lightGallery({
+		    	thumbnail: true
+			});  
+		});
+    </script>
 </body>
 </html>

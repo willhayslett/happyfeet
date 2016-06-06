@@ -16,6 +16,12 @@ $(document).ready(function(){
 	  	}
 	  
 	});
+
+	$(document).ready(function () {
+		  $(".navbar-toggle").on("click", function () {
+			    $(this).toggleClass("active");
+		  });
+	});
 	
 	//blink trending headline element for added cheesy effect
 	setInterval(function(){
@@ -62,26 +68,6 @@ $(document).ready(function(){
 	//bind iterateTrending to finished event to continuously loop through array
 	marq.bind('finished', iterate);
 
-
-	//getting video element using jQuery
-    var vid = $(".video");
-    var playing = false;
-    //check if video is ready to play
-  	vid.on('canplay', function(){
-        vid.click(function(){
-        	/*this.paused ? this.play() : this.pause();*/
-        	if(playing == false){
-        		$(this).get(0).setAttribute("controls","controls")
-        		$(this).get(0).play();
-         		playing = true;
-        	} else {
-        		$(this).get(0).removeAttribute("controls") 
-        		$(this).get(0).pause();
-        		playing = false;
-        	}
-        })
-    });
-
     //handle the subscribe form:
 
     $(function() {
@@ -119,12 +105,14 @@ $(document).ready(function(){
 			    // Set the message text.
 			    if (data.responseText !== '') {
 			    	$(formResponse).removeClass('alert alert-success');
-			    	$(formResponse).addClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text(data.responseText);
+			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');
-			    	$(formResponse).addClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
+			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
 			    }
 			});
 	    });
@@ -164,16 +152,22 @@ $(document).ready(function(){
 			    // Set the message text.
 			    if (data.responseText !== '') {
 			    	$(formResponse).removeClass('alert alert-success');
-			    	$(formResponse).addClass('alert alert-success');
+			    	$(formResponse).addClass('alert alert-danger');
 			        $(formResponse).text(data.responseText);
+			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');
-			    	$(formResponse).addClass('alert alert-success');
-			        $(formResponse).text('Whoops! That didn\'t work as expected. Close this window and let\'s try again.');
+			    	$(formResponse).addClass('alert alert-danger');
+			        $(formResponse).text('Whoops! That didn\'t work as expected. Please try again.');
+			        $(formResponse).append('<button id="reload" type="button" class="btn btn-primary btn-lg">Try Again</button>');
 			    }
 			});
 	    });
 	});
+
+   	$("#reload").click(function(){
+      	$('#commentForm').load(location.href + " #commentForm")
+   	});
 
 	//get year for copyright in footer
 	function getFooterDate(){
