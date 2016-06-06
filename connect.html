@@ -60,15 +60,15 @@
 	      	<form id="commentForm" action="sendComment.php" method="post" class="form-horizontal" role="form">
 				<div class="form-group">
 					<label class="" for="name">Name:</label>
-				    <input placeholder="Name" type="name" name="name" class="form-control" id="name">
+				    <input required="true" placeholder="Name" type="name" name="name" class="form-control" id="name">
 				</div>
 				<div class="form-group">
 				    <label class="" for="email">Email Address:</label>
-				    <input placeholder="Email Address" type="email" name="emailaddy" class="form-control" id="email">
+				    <input required="true" placeholder="Email Address" type="email" name="emailaddy" class="form-control" id="email">
 				</div>
 				<div class="form-group">
 					<label class="" for="comment">Comments:</label>
-				    <textarea placeholder="Message" type="comment" name="comment" rows="5" class="form-control" id="comment"></textarea>
+				    <textarea required="true" placeholder="Message" type="comment" name="comment" rows="5" class="form-control" id="comment"></textarea>
 				</div>
 				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 			</form>
