@@ -38,6 +38,20 @@ $(document).ready(function(){
 	  	'Socrates prepares light reading for the new baby, including popular works such as "The Republic" and "Phaedo"',
 	  	'Critics Respond to "Nightmare on Doobie Street 4: Baby\s Revenge"!'
 	];
+
+	/*function showRandomMarquee() {
+	  var rannum = Math.floor(Math.random()*textarray.length);
+	  $mq
+	    .marquee('destroy')
+	    .html(textarray[rannum])
+	    .marquee({duration: 2000});
+	}
+
+	$mq.bind('finished', showRandomMarquee);
+
+	//Start
+	showRandomMarquee();*/
+
 	var elementCount = 0;
 	var executeNum = 1;
 
@@ -96,7 +110,7 @@ $(document).ready(function(){
 				$(formResponse).addClass('alert alert-success');
 
 			    // Set the message text.
-			    $(formResponse).text(response);
+			    $(formResponse).html(response);
 
 			    // Clear the form.
 			    $('#email').val('');
@@ -106,7 +120,7 @@ $(document).ready(function(){
 			    if (data.responseText !== '') {
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
-			        $(formResponse).text(data.responseText);
+			        $(formResponse).html(data.responseText);
 			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-danger btn-lg">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');
@@ -142,7 +156,7 @@ $(document).ready(function(){
 				$(formResponse).addClass('alert alert-success');
 
 			    // Set the message text.
-			    $(formResponse).text(response);
+			    $(formResponse).html(response);
 
 			    // Clear the form.
 			    $('#name').val('');
@@ -153,7 +167,7 @@ $(document).ready(function(){
 			    if (data.responseText !== '') {
 			    	$(formResponse).removeClass('alert alert-success');
 			    	$(formResponse).addClass('alert alert-danger');
-			        $(formResponse).text(data.responseText);
+			        $(formResponse).html(data.responseText);
 			        $(formResponse).append('<br/><br/><button id="reload" value="Try Again" type="button" class="btn btn-danger btn-lg">Try Again</button>');
 			    } else {
 			    	$(formResponse).removeClass('alert alert-success');

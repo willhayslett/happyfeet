@@ -40,7 +40,7 @@
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "<h1><strong>Success!</strong> You've been subscribed. Look out for an introduction email soon.</h1>";
+            echo "<h1><strong>Success!</strong> We've got your comment and look forward to connecting with you soon.</h1>";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
