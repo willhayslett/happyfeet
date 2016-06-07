@@ -39,20 +39,42 @@ $(document).ready(function(){
 	  	'Critics Respond to "Nightmare on Doobie Street 4: Baby\s Revenge"!'
 	];
 
-	/*function showRandomMarquee() {
-	  var rannum = Math.floor(Math.random()*textarray.length);
-	  $mq
-	    .marquee('destroy')
-	    .html(textarray[rannum])
-	    .marquee({duration: 2000});
+	function show1stMarquee() {
+	  	marq
+	    	.marquee('destroy')
+	    	.html(textarray[0])
+	    	.marquee({duration: 3000});
+	    marq.bind('finished', show2ndMarquee);
 	}
 
-	$mq.bind('finished', showRandomMarquee);
+	function show2ndMarquee() {
+	  	marq
+	    	.marquee('destroy')
+	    	.html(textarray[1])
+	    	.marquee({duration: 3000});
+	    marq.bind('finished', show3rdMarquee);
+	}
+
+	function show3rdMarquee() {
+	  	marq
+	    	.marquee('destroy')
+	    	.html(textarray[2])
+	    	.marquee({duration: 3000});
+	    marq.bind('finished', show4thMarquee);
+	}
+
+	function show4thMarquee() {
+	  	marq
+	    	.marquee('destroy')
+	    	.html(textarray[3])
+	    	.marquee({duration: 3000});
+	    marq.bind('finished', show1stMarquee);
+	}
 
 	//Start
-	showRandomMarquee();*/
+	show1stMarquee();
 
-	var elementCount = 0;
+	/*var elementCount = 0;
 	var executeNum = 1;
 
 	function iterateTrending(counter, executeNumber){
@@ -80,7 +102,7 @@ $(document).ready(function(){
 	iterateTrending(elementCount, executeNum);
 	var iterate = iterateTrending(elementCount, executeNum);
 	//bind iterateTrending to finished event to continuously loop through array
-	marq.bind('finished', iterate);
+	marq.bind('finished', iterate);*/
 
     //handle the subscribe form:
 
