@@ -47,8 +47,7 @@ body#videos, body#horoscope, body#entertainment, body#babybump{
 }
 
 body#nightmare{
-	background:url(../images/background/horror.jpg) no-repeat center center;
-	background-size:cover;
+	background-color:black;
 }
 
 .jumbotron {
@@ -447,7 +446,7 @@ footer {
     text-align: center;
 }
 
-#babybump h2 :not(.t1-headline), .training h3, #videoClick p, h2:not(.t1-headline){
+#babybump h2 :not(.t1-headline), .training h3, #videoClick p{
    	font-family: 'Dosis', sans-serif;
     font-weight: 600;
     line-height: 46px;
@@ -461,6 +460,10 @@ footer {
     font-weight: 600;
     font-size: 25px;
     margin: 0 0 23px 0;
+}
+
+.tl-attribution a{
+	display:none;
 }
 
 .training h4, #commentGreeting p{
