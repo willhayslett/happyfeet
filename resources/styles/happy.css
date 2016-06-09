@@ -447,13 +447,20 @@ footer {
     text-align: center;
 }
 
-#babybump h2, .training h3, #videoClick p{
+#babybump h2 :not(.t1-headline), .training h3, #videoClick p, h2:not(.t1-headline){
    	font-family: 'Dosis', sans-serif;
     font-weight: 600;
     line-height: 46px;
     font-size: 35px;
     margin: 0 0 23px 0;
     text-transform: uppercase;
+}
+
+.tl-timeline h2{
+   	font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0 0 23px 0;
 }
 
 .training h4, #commentGreeting p{
@@ -547,4 +554,8 @@ dd#proposalEX img{
 .training h1{
 	text-align: center;
 	padding: 20px 20px;
+}
+
+.tl-headline{
+	font-size: 5;
 }
